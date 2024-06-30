@@ -80,7 +80,7 @@ function formatDate(date) {
 function checkPageOverflow(doc, currentY, maxHeight = 280) {
     if (currentY > maxHeight) {
         doc.addPage();
-        return 20; // Reset Y position for new page
+        return 20; 
     }
     return currentY;
 }
