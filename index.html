@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="imagens/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <title>Gerador de Currículo</title>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <h1 id="tituloPrincipal">Gerador de Curriculo</h1>
+            <h3 class="text-center mt-5">Dados pessoais</h3>
+                
+             <div class="form-group">
+                    <label for="name">Nome:</label><br>
+                    <input type="text" class="form-control" id="name" name="name" required>
+             </div>
+        
+        
+                <div class="form-group">
+                    <label for="dob">Data de nascimento:</label><br>
+                    <input type="date" class="form-control" id="dob" required>
+                </div>
+                <div class="form-group">
+                    <label for="age">Idade</label><br>
+                    <input type="text" class="form-control" id="age" readonly>
+                </div>
+                <div class="form-group">
+                    <label for="adress">Endereço</label><br>
+                    <input type="text" class="form-control" id="adress" required>
+                </div>
+                <div class="form-group">
+                    <label for="contato">Contato</label><br>
+                    <input type="email" class="form-control" id="contato" required>
+                </div>
+        
+        </div>
+
+        <div>
+            <h3 class="text-center mt-5">Experiencia profissional</h3>
+             <div class="form-group">
+                <label for="empresa">Empresa:</label>
+                <input type="text" class="form-control" name="empresas[]" id="empresa">
+                <label for="funcao">Função Exercida:</label>
+                <input type="text" class="form-control" name="funcoes[]" id="funcao">
+                <label for="inicio">Data de Início:</label>
+                <input type="month" class="form-control" name="inicios[]" id="inicio">
+                <label for="fim">Data de Fim:</label>
+                <input type="month" class="form-control" name="fins[]" id="fim">
+                <input class="form-check-input" type="checkbox" value="" id="atualmente">
+                <label class="form-check-label" for="atualmente">
+                  Atualmente
+                </label>
+                <br>
+                <!-- Botão para adicionar experiência -->
+                <button type="button" id="addExperience" class="btn btn-secondary">Adicionar Experiência</button>
+             </div>
+        </div>
+        <div>
+            
+             <!-- Formação Acadêmica -->
+             <div id="educationContainer" class="mt-4">
+                <h3 class="text-center mt-5">Formação Acadêmica</h3>
+                <div class="form-group">
+                    <label for="instituicao">Instituição:</label>
+                    <input type="text" class="form-control" name="instituicoes[]" id="instituicao">
+                    <label for="curso">Curso:</label>
+                    <input type="text" class="form-control" name="cursos[]" id="curso">
+                    <label for="inicio_curso">Data de Início:</label>
+                    <input type="month" class="form-control" name="inicios_cursos[]" id="inicio_curso">
+                    <label for="fim_curso">Data de Fim:</label>
+                    <input type="month" class="form-control" name="fins_cursos[]" id="fim_curso">
+                </div>
+                <!-- Botão para adicionar formação -->
+                <button type="button" id="addEducation" class="btn btn-secondary">Adicionar Formação</button>
+            </div>
+
+            <button type="button" id="gerarCurriculo" class="btn btn-primary mt-4" onclick="generatePDF()">Gerar Currículo</button>
+
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
